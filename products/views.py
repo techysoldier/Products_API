@@ -21,7 +21,7 @@ def products_list(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-@api_view(['GET', 'PUT'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk =pk)
     if request.method == 'GET':
@@ -32,44 +32,9 @@ def product_detail(request, pk):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
-         
+    elif request.method =='DELETE':
+        product.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)         
 
 
-    # car = get_object_or_404(Product, pk=pk)
-
-    # if request.method == 'GET':
-    #    serializer = ProductSerializer(car);
-    #    return Response(serializer.data)
    
-        
-
-    
-# @api_view(['GET', 'PUT', 'DELETE'])
-# def cars_detail(request, pk):
-#     car = get_object_or_404(Car, pk=pk)
-
-#     if request.method == 'GET':
-#        serializer = CarSerializer(car);
-#        return Response(serializer.data)
-
-#     elif request.method == 'PUT':
-#        car = get_object_or_404(Car, pk=pk)
-#        serializer = CarSerializer(car, data=request.data )
-#        serializer.is_valid(raise_exception=True)
-#        serializer.save()
-#        return Response(serializer.data)
-
-
-
-
-
-#     elif request.method == 'PUT':
-#        product = get_object_or_404(Product, pk=pk)
-#        serializer = ProductSerializer(product, data=request.data )
-#        serializer.is_valid(raise_exception=True)
-#        serializer.save()
-#        return Response(serializer.data)
-
-#     elif request.method == "DELETE":
-#         car.delete()
-#         return Response(status=status.HTTP_204_NO_CONTENT)
