@@ -68,7 +68,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/products/2/",
+					"raw": "http://127.0.0.1:8000/api/products/4/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -80,7 +80,7 @@
 					"path": [
 						"api",
 						"products",
-						"2",
+						"4",
 						""
 					]
 				}
@@ -127,7 +127,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/products/5/",
+					"raw": "http://127.0.0.1:8000/api/products/8/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -139,7 +139,7 @@
 					"path": [
 						"api",
 						"products",
-						"5",
+						"8",
 						""
 					]
 				}
