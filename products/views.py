@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import ProductSerializer
 from .models import Product
-from products import serializers
+
 
 
 @api_view(['GET', 'POST'])
